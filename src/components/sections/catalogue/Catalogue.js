@@ -7,7 +7,7 @@ import './Catalogue.css'
 
 const Catalogue = ({setInCart}) => {
 
-    const [products, isLoading] = useFetch("http://localhost:5000/fetchCatalogue");
+    const [products, isLoading] = useFetch("/fetchCatalogue");
 
     if (isLoading) return <Loader/>
 

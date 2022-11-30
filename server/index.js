@@ -1,12 +1,15 @@
 import express from "express";
 import cors from "cors";
 import axios from "axios";
+import path from "path";
 
 const port = 5000;
 const app = express();
+
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname + "/public")))
 
 app.get('/fetchCatalogue', cors(), async function(req, res) {
     try {
