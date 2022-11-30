@@ -1,0 +1,70 @@
+#receipt-title {
+    align-self: flex-start !important;
+    margin-bottom: 30px;
+}
+
+#receipt-title h1 {
+    font-size: 32px !important;
+    margin: 0 0;
+}
+
+.receipt-container {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    margin: 20px 0px;
+    padding: 50px 27px;
+    border-radius: 4px;
+    background: white;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.description.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+}
+
+.description.wrapper div {
+    margin-top: 15px;
+}
+
+.wrapper div label {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.total {
+    align-items: flex-end !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #receipt-title {
+        margin-bottom: 0px;
+    }
+    
+    .receipt-container {
+        align-self: flex-end;
+        flex-direction: row;
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    #receipt-title {
+        margin-bottom: 0px;
+    }
+    
+    .receipt-container {
+        align-self: flex-end;
+        flex-direction: row;
+        width: 60%;
+    }
+}

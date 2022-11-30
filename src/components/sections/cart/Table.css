@@ -1,0 +1,74 @@
+.table {
+    width: 100%;
+    height: fit-content;
+    background: white;
+    padding: 0px 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.table tr {
+    height: 55px;
+}
+
+.table th {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 700;
+    color: black;
+    text-align: left;
+    border-bottom: 1px solid #DEE2E6;
+    font-size: 13px;
+    text-align: center;
+}
+
+.small {
+    width: 150px !important;
+} 
+
+#product-name {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.table td {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 400;
+    color: black;
+    font-size: 12px;
+    text-align: center;
+}
+
+.trash-icon {
+    color: #EE2D56;
+    cursor: pointer;
+}
+
+#receipt-btn {
+    width: 255px;
+    align-self: center;
+    margin: 20px 0px;
+}
+
+@media screen and (min-width: 768px) {
+    
+    .table tr {
+        height: 47px;
+    }
+    
+    .table th {
+        font-size: 16px;
+        text-align: left;
+    }
+    
+    .table td {
+        font-size: 16px;
+        text-align: left;
+    }
+    
+    #receipt-btn {
+        align-self: flex-end;
+    }
+}

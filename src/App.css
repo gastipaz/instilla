@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #08C6C0;
+    --secondary-color: #78f6f2;
+}
+
+.logo {
+    height: 40px;
+}
+
+.project-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 100%;
+}
+
+.project-title h2 {
+    color: var(--primary-color);
+    font-size: 15px;
+}
+
+h1, h2, h3 {
+    text-align: left;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 700;
+    color: black;
+}
+
+h2, h3 {
+    margin: -5px 0px;
+}
+
+@keyframes loader {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    height: 50px;
+    animation: loader 1.5s ease-in-out infinite;
+}
+
+
+@media screen and (min-width: 768px) {
+    .logo {
+        height: 48px;
+    }
+    
+    .project-title h2 {
+        font-size: 16px;
+    }
+}

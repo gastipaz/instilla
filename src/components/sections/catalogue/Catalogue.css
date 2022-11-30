@@ -1,0 +1,68 @@
+#tag-icon {
+    position: absolute;
+    font-family: "Helvetica";
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 500;
+    z-index: 2;
+    bottom: 7px;
+    left: 8px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 4px;
+    background-color: #23242A;
+    color: white;
+    height: 24px;
+    width: fit-content;
+    padding: 2px 10px;
+}
+
+#tag-icon label {
+    margin-left: 5px;
+}
+
+#checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#checkbox label {
+    color: rgba(33, 37, 41, 0.8);
+    cursor: pointer;
+}
+
+[type=checkbox] {
+    -webkit-appearance: none;
+    appearance: none;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--primary-color);
+    margin-right: 10px;
+}
+
+[type=checkbox]:checked {
+    background-color: var(--primary-color);
+}
+
+[type=checkbox]::before {
+    content: "";
+    color: transparent;
+    display: block;
+    width: inherit;
+    height: inherit;
+    background-color: transparent;
+    background-size: contain;
+}
+
+[type=checkbox]:checked::before {
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-image: url(./../../../images/checkmark.ico);
+}
