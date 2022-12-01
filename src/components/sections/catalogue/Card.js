@@ -20,8 +20,9 @@ const Card = ({ item, id, setInCart, inCart }) => {
     }
 
     function displayCartIcon() {
+        const isInCart = inCart.find(entry=> entry.product === item.name);
         return (
-            inCart.includes(entry => entry.product === item.name) &&
+            isInCart !== undefined &&
             <div className='cart-icon'>
                 <BsFillCartCheckFill/>
             </div>
