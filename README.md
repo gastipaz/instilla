@@ -1,5 +1,5 @@
 
-![Logo](https://lacerba.io/assets/Instilla-logo-verticale.png)
+![Logo](https://iab.it/wp-content/uploads/2022/02/instilla-1.png)
 
 
 
