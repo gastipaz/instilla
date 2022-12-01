@@ -114,7 +114,7 @@ then build the project
 ```
 copy the contents of the "build" folder
 ```bash
-  /your_main_directory/build
+  /instilla/build
 ```
 and replace the content of the "public" folder that's inside the server directory
 ```bash
