@@ -9,6 +9,9 @@
 
 .logo {
     height: 40px;
+    position: absolute;
+    left: 10px;
+    top: 24px;
 }
 
 .project-title {
@@ -17,6 +20,8 @@
     align-items: center;
     width: fit-content;
     height: 100%;
+    position: absolute;
+    right: 10px;
 }
 
 .project-title h2 {
@@ -54,6 +59,11 @@ h2, h3 {
 @media screen and (min-width: 768px) {
     .logo {
         height: 48px;
+        position: static;
+    }
+    
+    .project-title {
+        position: static;
     }
     
     .project-title h2 {
