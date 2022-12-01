@@ -1,15 +1,16 @@
 import React from 'react'
 import { Button, Heading, Section } from '../../styled-elements/ProjectElements'
 import {FaTrashAlt} from 'react-icons/fa'
+import axios from 'axios'
 import './Table.css'
 
 const Table = ({inCart, setShowReceipt, showReceipt, setInCart}) => {
 
     const receiptButtonLabel = !showReceipt ? "GENERATE RECEIPT" : "HIDE RECEIPT";
 
-    const handleDelete = (id) => {
-        const filtered = inCart.filter(item => item.id !== id);
-        setInCart(filtered);
+    const handleDelete = async (id) => {
+        const {data} = await axios.post('http://localhost:5000/removeItem', {items: inCart, id: id});
+        setInCart(data?.filtered);
     }
 
   return (

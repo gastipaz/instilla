@@ -1,15 +1,20 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { ElementWrapper, Heading, Subtitle } from '../../styled-elements/ProjectElements'
 import './Receipt.css'
 
 const Receipt = ({ inCart }) => {
 
-    const calculateTotal = (list) => {
-        const totalPrice = list.reduce((total, item) => total += parseFloat(item.price), 0);
-        const totalTax = list.reduce((total, item) => total += parseFloat(item.tax), 0);
-        return [totalPrice.toFixed(2), totalTax.toFixed(2)]
-    }
-    const [total, tax] = calculateTotal(inCart);
+    const [total, setTotal] = useState(null)
+
+    useEffect(() => {
+        async function postData() {
+            const result = await axios.post('http://localhost:5000/getReceipt', {items: inCart});
+            console.log(result.data);
+            setTotal(result.data)
+        }
+        postData();
+    },[inCart])
 
     return (
         <section className='receipt-container'>
@@ -22,8 +27,8 @@ const Receipt = ({ inCart }) => {
                     <label>Including taxes</label>
                 </ElementWrapper>
                 <ElementWrapper className='total wrapper'>
-                    <Subtitle>${total}</Subtitle>
-                    <label>${tax}</label>
+                    <Subtitle>${total?.price}</Subtitle>
+                    <label>${total?.tax}</label>
                 </ElementWrapper>
             </div>
         </section>
