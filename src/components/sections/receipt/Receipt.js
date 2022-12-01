@@ -10,8 +10,7 @@ const Receipt = ({ inCart }) => {
     useEffect(() => {
         async function postData() {
             const result = await axios.post('http://localhost:5000/getReceipt', {items: inCart});
-            console.log(result.data);
-            setTotal(result.data)
+            setTotal(result?.data)
         }
         postData();
     },[inCart])
