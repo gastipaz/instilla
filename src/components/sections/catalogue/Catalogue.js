@@ -5,7 +5,7 @@ import { useFetch } from './../../hooks/APIHooks'
 import Loader from './../../Loader'
 import './Catalogue.css'
 
-const Catalogue = ({setInCart}) => {
+const Catalogue = ({setInCart, inCart}) => {
 
     const [products, isLoading] = useFetch("http://localhost:5000/fetchCatalogue");
 
@@ -18,7 +18,7 @@ const Catalogue = ({setInCart}) => {
                     <Heading>Products Catalogue</Heading>
                     <Grid>
                     {products.map((product, index) =>    
-                        <Card key={index} item={product} id={index} setInCart={setInCart}/>
+                        <Card key={index} item={product} id={index} setInCart={setInCart} inCart={inCart}/>
                     )}
                     </Grid> 
                 </>) 

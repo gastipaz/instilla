@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <Container>
-        <Catalogue setInCart={setInCart}/>
+        <Catalogue setInCart={setInCart} inCart={inCart}/>
         {inCart.length > 0 &&
         <Table inCart={inCart} setShowReceipt={setShowReceipt} showReceipt={showReceipt} setInCart={setInCart}/>}
         {showReceipt && inCart.length > 0 && 
