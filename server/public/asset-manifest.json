@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.becdc22d.css",
-    "main.js": "/static/js/main.e28807d3.js",
+    "main.css": "/static/css/main.e40328b7.css",
+    "main.js": "/static/js/main.f8fb4c0c.js",
     "static/js/787.546b6b15.chunk.js": "/static/js/787.546b6b15.chunk.js",
     "static/media/Instilla-logo.png": "/static/media/Instilla-logo.c31a248985296990fc65.png",
     "static/media/loader.png": "/static/media/loader.efa1a7b49ed465d877c3.png",
     "static/media/checkmark.ico": "/static/media/checkmark.55999cc350c1161131e7.ico",
     "index.html": "/index.html",
-    "main.becdc22d.css.map": "/static/css/main.becdc22d.css.map",
-    "main.e28807d3.js.map": "/static/js/main.e28807d3.js.map",
+    "main.e40328b7.css.map": "/static/css/main.e40328b7.css.map",
+    "main.f8fb4c0c.js.map": "/static/js/main.f8fb4c0c.js.map",
     "787.546b6b15.chunk.js.map": "/static/js/787.546b6b15.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.becdc22d.css",
-    "static/js/main.e28807d3.js"
+    "static/css/main.e40328b7.css",
+    "static/js/main.f8fb4c0c.js"
   ]
 }

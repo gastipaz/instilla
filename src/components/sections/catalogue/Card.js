@@ -3,9 +3,10 @@ import axios from 'axios'
 import { CardContainer, CardImage, CardImageWrapper, CardText, CardTitle } from '../../styled-elements/CardElements'
 import { Button, ElementWrapper } from '../../styled-elements/ProjectElements'
 import { FaTag } from 'react-icons/fa'
+import {BsFillCartCheckFill} from 'react-icons/bs'
 import './Catalogue.css'
 
-const Card = ({ item, id, setInCart }) => {
+const Card = ({ item, id, setInCart, inCart }) => {
 
     const exemptCategories = ["books", "food", "medical-products"];
     let imported = document.getElementById(`imported${id}`)?.checked;
@@ -16,6 +17,15 @@ const Card = ({ item, id, setInCart }) => {
 
     function handleChange(event) {
         imported = event.target.checked;
+    }
+
+    function displayCartIcon() {
+        return (
+            inCart.includes(entry => entry.product === item.name) &&
+            <div className='cart-icon'>
+                <BsFillCartCheckFill/>
+            </div>
+        )
     }
 
     async function addToCart(id) {
@@ -33,6 +43,7 @@ const Card = ({ item, id, setInCart }) => {
                     <FaTag />
                     <label>{category}</label>
                 </div>
+                {displayCartIcon()}
             </CardImageWrapper>
             <ElementWrapper>
                 <CardTitle>{item.name}</CardTitle>

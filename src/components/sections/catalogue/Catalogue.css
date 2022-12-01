@@ -66,3 +66,20 @@
     background-repeat: no-repeat;
     background-image: url(./../../../images/checkmark.ico);
 }
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    bottom: 7px;
+    right: 8px;
+    font-size: 10px;
+    border-radius: 4px;
+    background-color: #23242A;
+    color: var(--primary-color);
+    height: 24px;
+    width: fit-content;
+    padding: 2px 10px;
+}
