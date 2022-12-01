@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import { CardContainer, CardImage, CardImageWrapper, CardText, CardTitle } from '../../styled-elements/CardElements'
 import { Button, ElementWrapper } from '../../styled-elements/ProjectElements'
 import { FaTag } from 'react-icons/fa'
@@ -13,31 +14,14 @@ const Card = ({ item, id, setInCart }) => {
     let basicTax = isExempt ? 0 : 10;
     let category = item.category.replace("-", " ")
 
-    function calculatePrice(price, tax, isImported) {
-        let importTax = isImported ? (price * 5 / 100) : 0;
-        let salesTax = tax > 0 ? (price * tax / 100) : 0;
-        let totalTax = importTax + salesTax;
-        let finalPrice = price + totalTax;
-        
-        const roundToPrecision = (number) => {
-            const strNumber = number.toString()
-            if (Number(strNumber.slice(-1)) < 5) {
-                return (Math.round(number * 100) / 100).toFixed(2)
-            }
-            return (Math.ceil(number * 100) / 100).toFixed(2)
-        }
-        
-        return [roundToPrecision(finalPrice), roundToPrecision(totalTax)]
-    }
-
     function handleChange(event) {
         imported = event.target.checked;
     }
 
-    function addToCart() {
+    async function addToCart(id) {
         let itemID = id.toString() + new Date().getTime().toString();
-        let [total, tax] = calculatePrice(price, basicTax, imported);
-        const newProduct = { id:itemID, product: item.name, imported: imported ? "Yes" : "No", price: total, tax: tax }
+        const {data} = await axios.post("/addToCart", {price: price, basicTax:basicTax, imported: imported})
+        const newProduct = { id:itemID, product: item.name, imported: imported ? "Yes" : "No", price: data?.total, tax: data?.tax }
         setInCart(prevProducts => [...prevProducts, newProduct])
     }
 
@@ -59,7 +43,7 @@ const Card = ({ item, id, setInCart }) => {
                 </div>
             </ElementWrapper>
             <ElementWrapper>
-                <Button onClick={() => addToCart()}>add to cart</Button>
+                <Button onClick={() => addToCart(id)}>add to cart</Button>
             </ElementWrapper>
         </CardContainer>
     )
